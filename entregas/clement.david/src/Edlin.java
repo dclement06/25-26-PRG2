@@ -12,7 +12,6 @@ public class Edlin {
         boolean salir = false;
 
         while (!salir) {
-            // Mostrar las líneas
             System.out.println("\nBienvenidos al editor EDLIN");
             for (int i = 0; i < 10; i++) {
                 if (i == lineaActiva) {
