@@ -40,8 +40,18 @@ public class Edlin {
                     }
                     break;
                 case "E":
-                    System.out.print("Nuevo texto para la línea " + lineaActiva + ": ");
-                    lineas[lineaActiva] = sc.nextLine();
+                    System.out.print("¿Qué línea desea editar? (0-9): ");
+                    try {
+                        int lineaEditar = Integer.parseInt(sc.nextLine());
+                        if (lineaEditar >= 0 && lineaEditar < 10) {
+                            System.out.print("Nuevo texto para la línea " + lineaEditar + ": ");
+                            lineas[lineaEditar] = sc.nextLine();
+                        } else {
+                            System.out.println("Línea fuera de rango.");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Entrada inválida.");
+                    }
                     break;
                 case "B":
                     lineas[lineaActiva] = "";
